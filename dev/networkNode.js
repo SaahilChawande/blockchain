@@ -41,6 +41,22 @@ app.get('/mine', function(req, res) {
     res.json({ note: "New Block mined successfully", block: newBlock });
 });
 
+// register a node and broadcast it to the whole network
+app.post('/register-and-broadcast-node', function (req, res) {
+    const newNodeUrl = req.body.newNodeUrl;
+
+});
+
+//register a node with the network
+app.post('/register-node', function (req, res) {
+
+});
+
+//register multiple nodes at once
+app.post('/register-nodes-bulk', function (req, res) {
+
+});
+
 app.listen(port, function() {
     console.log(`Listening on port ${port}...`);
 });
