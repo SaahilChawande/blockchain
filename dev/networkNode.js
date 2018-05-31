@@ -61,7 +61,7 @@ app.get('/mine', function(req, res) {
     const newBlock = bitcoin.createNewBlock(nonce, previousBlockHash, blockHash);
 
     const requestPromises = [];
-    this.networkNodes.forEach(networkNodeUrl => {
+    bitcoin.networkNodes.forEach(networkNodeUrl => {
         const requestOptions = {
             uri: networkNodeUrl + '/receive-new-block',
             method: 'POST',
