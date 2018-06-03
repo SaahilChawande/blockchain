@@ -91,7 +91,7 @@ Blockchain.prototype.chainIsValid = function(blockchain)  {
     const correctHash = genesisBlock['hash'] === '0';
     const correctTrasactions = genesisBlock['transactions'].length === 0;
     
-    if (correctNonce && correctPreviousBlockHash && correctHash && correctTrasactions) validChain = false;
+    if (!correctNonce || !correctPreviousBlockHash || !correctHash || !correctTrasactions) validChain = false;
 
     return validChain;
 };
