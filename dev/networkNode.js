@@ -198,7 +198,9 @@ app.get('/consensus', function(req, res)    {
 
 // search by using a blockhash
 app.get('/block/:blockHash', function(req, res) {
-
+    const blockHash = req.params.blockHash;
+    const correctBlock = bitcoin.getBlock(blockHash);
+    res.json({ block: correctBlock });
 });
 
 // search by using a transaction id
