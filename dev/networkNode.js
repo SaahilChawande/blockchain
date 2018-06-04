@@ -205,7 +205,9 @@ app.get('/block/:blockHash', function(req, res) {
 
 // search by using a transaction id
 app.get('/transaction/:transactionId', function(req, res)   {
-
+    const transactionId = req.params.transactionId;
+    const transactionData = bitcoin.getTransaction(transactionId);
+    res.json({ transaction: transactionData.transaction, block: transactionData.block });
 });
 
 // search by using a address
